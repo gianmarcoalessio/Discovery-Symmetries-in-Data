@@ -1,6 +1,5 @@
-# Readme 
-
-## Advanced Topics in Machine Learning - 
+## Discovery Symmetries in Data
+### Symmetry Regularization on MNIST dataset under rotation trasformations
 
 This is the first attempt to implement a Fully Connected 1 layer neural network (`number of neurons = 728`) multiclass classification problem that is invariant to the rotation of the MNIST dataset over a certain angle (in my analysis I selected an angle of 3 degree) and to compare the results with the same network but with different regularization terms, in particular:
 
