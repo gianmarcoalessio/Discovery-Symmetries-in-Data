@@ -27,10 +27,17 @@ These results are obtained using the best model weights over 10 runs over 1000 e
 The plots of the Loss functions and the weight matrices of first layer are saved inside the folder `./img`
 The weights of the best performing Loss for each analysis are saved in the folder `./best_model_weights`
 
+- $\mathcal{S_N} \in \R^{10\times6120}$ : Training set 
+- $\mathcal{\phi} \in \R^{10\times728}$ : Neural Networks first layer parameters
+- $\mathcal{W} \in \R^{120\times728}$ : Dictionary elements (atoms), cardinality of the group is `120`.
 
 # The CE LOSS
 
-For this Loss it was mplemented only the [the cross entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) 
+$$
+\mathcal{L(S_N,\phi)} = \mathcal{L_{CE}(S_N, \phi)}
+$$
+
+For this Loss it was implemented only the [the cross entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) 
 
 - Train Accuracy: 73.51%
 - Test Accuracy: 53.66%
@@ -41,7 +48,11 @@ For this Loss it was mplemented only the [the cross entropy loss](https://pytorc
 
 # The Challenge LOSS
 
-For this Loss it was implemented the [the cross entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) and the regularization term as explained for the challenge. (The commutator term between the covariance matrix of the weigths and the data and the Gramian sorted term)
+$$
+\mathcal{L(S_N,\phi)} = \mathcal{L_{CE}(S_N, \phi)} + \mathcal{L_{comm}(S_N,\phi)} + \mathcal{L_{sort}(\phi)}
+$$
+
+For this Loss it was implemented the [the cross entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) and the regularization term as explained for the challenge. (the commutator term between the covariance matrix of the weigths and the data and the Gramian sorted term)
 
 - Train Accuracy: 58.68%
 - **Test Accuracy: 54.64%**
@@ -51,6 +62,10 @@ For this Loss it was implemented the [the cross entropy loss](https://pytorch.or
 - For 10 runs it tooks 10.40 minute and for the results we used the best recorded one
 
 # The Symmetry LOSS
+
+$$
+\mathcal{L(S_N,\phi,W)} = \mathcal{L_{CE}(S_N, \phi)} + \mathcal{L_{comm_{symm}}(S_N,W)} + \mathcal{L_{regularization_{symm}}(W)}
+$$
 
 For this Loss it was implemented the [the cross entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) and the regularization term as explained in [the paper](https://arxiv.org/abs/2006.14027).
 
