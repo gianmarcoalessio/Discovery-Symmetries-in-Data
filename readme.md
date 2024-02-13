@@ -1,6 +1,8 @@
 ## Discovery Symmetries in Data
 ### Symmetry Regularization on MNIST dataset under rotation trasformations
 
+![](./img/1_test_results.png){fig-align="center" width=50%}
+
 This is the first attempt to implement a Fully Connected 1 layer neural network (`number of neurons = 728`) multiclass classification problem that is invariant to the rotation of the MNIST dataset over a certain angle (in my analysis I selected an angle of 3 degree) and to compare the results with the same network but with different regularization terms, in particular:
 
 - the *FCNN* with only the cross entropy loss. (**The CE LOSS**)
@@ -27,9 +29,9 @@ These results are obtained using the best model weights over 10 runs over 1000 e
 The plots of the Loss functions and the weight matrices of first layer are saved inside the folder `./img`
 The weights of the best performing Loss for each analysis are saved in the folder `./best_model_weights`
 
-- $\mathcal{S_N} \in \R^{10\times6120}$ : Training set 
-- $\mathcal{\phi} \in \R^{10\times728}$ : Neural Networks first layer parameters
-- $\mathcal{W} \in \R^{120\times728}$ : Dictionary elements (atoms), cardinality of the group is `120`.
+- $\mathcal{S_N} \in \mathcal{R}^{10\times6120}$ : Training set 
+- $\mathcal{\phi} \in \mathcal{R}^{10\times728}$ : Neural Networks first layer parameters
+- $\mathcal{W} \in \mathcal{R}^{120\times728}$ : Dictionary elements (atoms), cardinality of the group is `120`.
 
 # The CE LOSS
 
