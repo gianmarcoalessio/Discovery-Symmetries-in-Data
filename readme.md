@@ -76,7 +76,7 @@ For this Loss it was implemented the [the cross entropy loss](https://pytorch.or
 
 :::
 
-# Conclusion e further investigations
+# Conclusion and further investigations
 
 This initial exploration into the application of symmetry regularization within a Fully Connected Neural Network (FCNN) framework on the MNIST dataset has provided invaluable insights into the operational intricacies of neural networks and the practical use of PyTorch. It has illuminated the profound impact that symmetries have on the regularization of weight matrices, as evidenced by the significant rotational symmetries observed in the weight matrices from our experiments. This investigation has allowed for a nuanced understanding of how loss functions behave and their resultant effects on both training and testing accuracies. The adoption of a **Symmetry Regularization framework** has been instrumental in shedding light on how to effectively address sample complexity challenges, while also revealing areas that require further exploration to fully leverage this framework's potential.
 
