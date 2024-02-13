@@ -1,0 +1,24 @@
+name: advance-topics-ml
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python
+  - torchvision
+  - jupyterlab
+  - numpy
+  - pandas
+  - ipython
+  - matplotlib
+  - seaborn
+  - scikit-learn 
+  - tqdm 
+  - numpy 
+  - pytorch 
+  - torchvision
+  - icecream
+  - pip
+  - pip:
+    - torchsort
+
+# command to update the packages that are listed above: conda env update --file environment.yml --prune
