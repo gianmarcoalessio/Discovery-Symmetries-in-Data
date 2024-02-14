@@ -35,6 +35,26 @@ def plot_images(images,label,n,columns,rows):
 def rotate_images(images, labels, angle=3):
     rotated_images = []
     rotated_labels = []
+
+    for i in range(len(images)):
+
+        image = images[i]
+        label = labels[i]
+
+        # Choose a random rotation angle (multiple of 3 degrees)
+        degree = random.choice(range(0, 360, angle))
+        
+        # Rotate the image
+        rotated_image = TF.rotate(image, degree)
+        rotated_images.append(rotated_image)
+        rotated_labels.append(label)
+
+    return torch.stack(rotated_images), torch.tensor(rotated_labels)
+
+## Sbagliata conservo per il futuro
+def rotate_images_old(images, labels, angle=3):
+    rotated_images = []
+    rotated_labels = []
     rotated_atoms = []
     cardinality = int(360/angle)
 
@@ -64,6 +84,7 @@ def rotate_images(images, labels, angle=3):
     rotated_atoms = rotated_atoms.view(cardinality, -1)
 
     return torch.stack(rotated_images), torch.tensor(rotated_labels), rotated_atoms, cardinality
+
 
 def imshow(img):
     npimg = img.numpy()
